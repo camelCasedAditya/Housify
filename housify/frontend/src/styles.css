@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+button {
+  background: #2b6cb0; color: white; border: 0; padding: 0.5rem 0.9rem;
+  border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+}
+button:hover { background: #2c5282; }
+button:disabled { background: #4a5568; cursor: not-allowed; }
+input, textarea {
+  background: #1a1d24; color: #e8e8ec; border: 1px solid #2d3340;
+  padding: 0.5rem; border-radius: 6px; font: inherit; width: 100%;
+}
+a { color: #63b3ed; }
+.card {
+  background: #181b22; border: 1px solid #262a34; border-radius: 8px; padding: 1rem;
+}
