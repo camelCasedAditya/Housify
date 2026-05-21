@@ -1,0 +1,12 @@
+- generic [ref=e3]:
+  - heading "🏠 Housify" [level=1] [ref=e4]
+  - paragraph [ref=e5]: AI architect — chat your house into existence.
+  - generic [ref=e6]:
+    - heading "New project" [level=2] [ref=e7]
+    - text: Title
+    - textbox [ref=e8]: My first house
+    - generic [ref=e9]: Brief
+    - textbox [ref=e10]: A small 2-bedroom modern house with an open living/kitchen, one bathroom, and a covered front porch.
+    - button "Generate floor plan" [ref=e12] [cursor=pointer]
+  - heading "All projects" [level=2] [ref=e13]
+  - generic [ref=e15]: No projects yet — create one above.

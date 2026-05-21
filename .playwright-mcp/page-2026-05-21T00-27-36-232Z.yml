@@ -1,0 +1,22 @@
+- generic [ref=e3]:
+  - heading "🏠 Housify" [level=1] [ref=e4]
+  - paragraph [ref=e5]: AI architect — chat your house into existence.
+  - generic [ref=e6]:
+    - heading "New project" [level=2] [ref=e7]
+    - text: Title
+    - textbox [ref=e8]: Test E2E House
+    - generic [ref=e9]: Brief
+    - textbox [ref=e10]: A simple rectangular single-story house with one living room, one kitchen, one bedroom, and one bathroom. About 10m x 8m total.
+    - button "Designing…" [disabled] [ref=e24]
+  - heading "All projects" [level=2] [ref=e13]
+  - generic [ref=e14]:
+    - link "My first house A small 2-bedroom modern house with an open living/kitchen, one bathroom, and a covered front porch.… 5/20/2026, 5:18:09 PM" [ref=e16] [cursor=pointer]:
+      - /url: /p/cd21f95d-3625-4d6d-8d1a-6a9a60a1ab0f
+      - generic [ref=e17]: My first house
+      - generic [ref=e18]: A small 2-bedroom modern house with an open living/kitchen, one bathroom, and a covered front porch.…
+      - generic [ref=e19]: 5/20/2026, 5:18:09 PM
+    - link "My first house A small 2-bedroom modern house with an open living/kitchen, one bathroom, and a covered front porch.… 5/20/2026, 5:17:35 PM" [ref=e20] [cursor=pointer]:
+      - /url: /p/6b2ae33f-088e-4e6b-9aba-7a75fbeaac38
+      - generic [ref=e21]: My first house
+      - generic [ref=e22]: A small 2-bedroom modern house with an open living/kitchen, one bathroom, and a covered front porch.…
+      - generic [ref=e23]: 5/20/2026, 5:17:35 PM

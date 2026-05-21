@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "← Housify" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e6]:
+      - link "1 · Floor plan" [ref=e7] [cursor=pointer]:
+        - /url: /p/55fe6b5e-66b9-4df3-8112-9953b969b039
+      - link "2 · 3D" [ref=e8] [cursor=pointer]:
+        - /url: /p/55fe6b5e-66b9-4df3-8112-9953b969b039/scene3d
+      - link "3 · Furnish" [ref=e9] [cursor=pointer]:
+        - /url: /p/55fe6b5e-66b9-4df3-8112-9953b969b039/furnish
+  - generic [ref=e10]:
+    - heading "Phase 2 — 3D rendering" [level=2] [ref=e11]
+    - paragraph [ref=e12]: Coming next. Phase 1 (Floor Plan) is the working slice in this build.
