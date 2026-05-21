@@ -2,27 +2,32 @@
 
 > Describe a home in plain English. Get an editable, versioned floor plan in seconds.
 
----
+<p align="center">
+  <img src="docs/screenshot-floorplan.png" alt="Housify blueprint canvas — craftsman bungalow floor plan" width="900">
+</p>
 
-## Screenshots
-
-![Home page — describe any home and generate instantly](docs/screenshot-home.png)
-
-![Blueprint floor plan — room colors, door arcs, dimension labels](docs/screenshot-floorplan.png)
-
-![Statistics panel — area breakdown, room counts, visual bars](docs/screenshot-stats.png)
+Type a brief. Watch rooms, walls, doors, and dimensions appear as an architectural blueprint. Chat to refine anything — every change is versioned.
 
 ---
 
 ## What it does
 
-You type a brief description of a house. Housify uses an LLM to generate a complete floor plan as a geometric DSL — rooms as polygons, walls, doors, and windows with real positions and dimensions. You can then chat to refine any aspect of the plan, and every change is versioned so you can revert at any time.
-
-**Live demo:** type something like:
+You describe a house. Housify uses an LLM to generate a complete floor plan as a geometric DSL — rooms as polygons, walls, doors, and windows with real positions and dimensions. Chat to refine any aspect of the plan, and every edit is versioned so you can revert at any time.
 
 > *"3-bedroom craftsman bungalow, open kitchen flowing into living room, master suite with walk-in closet, covered front porch"*
 
-And watch a fully-structured, architecturally-valid floor plan appear.
+<table>
+<tr>
+<td width="55%">
+<img src="docs/screenshot-home.png" alt="Home page">
+<br><sub>Describe any home — or pick a prompt to get started instantly.</sub>
+</td>
+<td width="45%">
+<img src="docs/screenshot-stats.png" alt="Statistics panel">
+<br><sub>Statistics panel: total area, room breakdown, bedroom and bathroom counts.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
