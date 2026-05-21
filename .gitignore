@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+
+# Django
+housify/backend/db.sqlite3
+
+# Node
+housify/frontend/node_modules/
+node_modules/
+
+# Build
+housify/frontend/dist/
+
+# Tools
+.claude/
+.playwright-mcp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Loose screenshots
+screenshot-*.png
