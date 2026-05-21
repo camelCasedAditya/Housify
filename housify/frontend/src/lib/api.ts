@@ -55,6 +55,10 @@ export const api = {
     jget<PhaseDoc[]>(`/api/projects/${id}/phase/${phase}/versions/`),
   revert: (id: string, phase: Phase, version: number) =>
     jpost<PhaseDoc>(`/api/projects/${id}/phase/${phase}/revert/${version}/`, {}),
+  deleteProject: (id: string) =>
+    fetch(`${BASE}/api/projects/${id}/`, { method: "DELETE" }).then((r) => {
+      if (!r.ok && r.status !== 204) throw new Error(`${r.status}`);
+    }),
   chatList: (id: string, phase: Phase) =>
     jget<ChatTurn[]>(`/api/projects/${id}/chat/${phase}/`),
   chatSend: (id: string, message: string) =>

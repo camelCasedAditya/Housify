@@ -1,16 +1,221 @@
-* { box-sizing: border-box; }
+:root {
+  /* Core palette — warm black + cyanotype blueprint blue */
+  --bg:           #0a0a08;
+  --surface:      #0e0e0c;
+  --card:         #131311;
+  --card-hover:   #181816;
+  --border:       #1e1e1c;
+  --border-bright:#2c2c2a;
+
+  /* Blueprint blue accent */
+  --accent:       #5b9bd5;
+  --accent-hover: #74aede;
+  --accent-dim:   #3a6898;
+  --accent-bg:    #060e1a;
+
+  /* Secondary: drafting amber */
+  --amber:        #c8a876;
+  --amber-dim:    #8a7252;
+
+  /* Text — warm white, like blueprint print */
+  --text:         #e0ddd6;
+  --text-muted:   #706e68;
+  --text-dim:     #3a3936;
+
+  /* Status */
+  --red:          #e05252;
+  --red-bg:       #160a0a;
+  --red-border:   #2e1010;
+  --yellow:       #d4a83a;
+  --yellow-bg:    #14100a;
+  --yellow-border:#2c2210;
+
+  /* Canvas blueprint */
+  --canvas-bg:    #060f1e;
+
+  --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+  --font-body:    'IBM Plex Mono', 'Courier New', monospace;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  --radius:    6px;
+  --radius-sm: 4px;
+  --radius-lg: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+/* ── TYPOGRAPHY ── */
+h1 { font-family: var(--font-display); letter-spacing: 0.04em; }
+h2, h3 { font-family: var(--font-body); font-weight: 500; }
+
+/* ── BUTTONS ── */
 button {
-  background: #2b6cb0; color: white; border: 0; padding: 0.5rem 0.9rem;
-  border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+  background: var(--accent);
+  color: #04090f;
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.12s, transform 0.08s;
+  white-space: nowrap;
 }
-button:hover { background: #2c5282; }
-button:disabled { background: #4a5568; cursor: not-allowed; }
+button:hover:not(:disabled) { background: var(--accent-hover); }
+button:active:not(:disabled) { transform: scale(0.97); }
+button:disabled { background: var(--border-bright); color: var(--text-dim); cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--text-muted);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--card-hover);
+  color: var(--text);
+  border-color: var(--accent-dim);
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 0.2rem 0.4rem;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.btn-delete:hover:not(:disabled) {
+  background: var(--red-bg);
+  color: var(--red);
+  border-radius: var(--radius-sm);
+}
+
+/* ── INPUTS ── */
 input, textarea {
-  background: #1a1d24; color: #e8e8ec; border: 1px solid #2d3340;
-  padding: 0.5rem; border-radius: 6px; font: inherit; width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  width: 100%;
+  transition: border-color 0.12s, box-shadow 0.12s;
+  resize: none;
 }
-a { color: #63b3ed; }
+input::placeholder, textarea::placeholder { color: var(--text-dim); font-style: italic; }
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-dim);
+  box-shadow: 0 0 0 3px rgba(91,155,213,0.08);
+}
+
+label {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+/* ── CARDS ── */
 .card {
-  background: #181b22; border: 1px solid #262a34; border-radius: 8px; padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
 }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--text); }
+
+/* ── ANIMATIONS ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.25; }
+  30%            { transform: translateY(-5px); opacity: 1; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up { animation: fade-up 0.35s ease forwards; }
+.animate-fade-in { animation: fade-in 0.25s ease forwards; }
+
+.typing-dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: typing-dot 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.generating-ring {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--border-bright);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin: 0 auto;
+}
+
+/* ── BLUEPRINT CANVAS ── */
+.blueprint-canvas {
+  background-color: var(--canvas-bg);
+  background-image:
+    linear-gradient(rgba(91,155,213,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,155,213,0.1) 1px, transparent 1px),
+    linear-gradient(rgba(91,155,213,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,155,213,0.04) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+/* ── PROJECT LIST ── */
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.1s;
+  text-decoration: none;
+  color: inherit;
+}
+.project-row:hover { background: var(--card); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: var(--radius-sm); }
+.project-row:last-child { border-bottom: none; }

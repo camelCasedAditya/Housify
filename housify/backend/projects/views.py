@@ -34,7 +34,7 @@ class ProjectListCreate(generics.ListCreateAPIView):
         return Response(ProjectSerializer(project).data, status=status.HTTP_201_CREATED)
 
 
-class ProjectDetail(generics.RetrieveAPIView):
+class ProjectDetail(generics.RetrieveDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
