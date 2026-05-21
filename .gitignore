@@ -25,3 +25,6 @@ Thumbs.db
 
 # Loose screenshots
 screenshot-*.png
+
+# Demo video
+demo-video/
